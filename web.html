@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Hub de Inventário na Web: passo a passo</title>
+<meta name="description" content="Passo a passo para usar o Hub de Inventário no navegador Edge, dentro do envios.">
+<meta name="theme-color" content="#ffe600">
+<link rel="icon" href="icone.png">
+<link rel="preload" as="font" type="font/woff2" href="fontes/Figtree-700.woff2" crossorigin>
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body class="pg-guia">
+<a class="pular" href="#passo-1">Pular para o primeiro passo</a>
+<div class="faixa" aria-hidden="true"></div>
+<div class="barra">
+  <div class="vidro" data-vidro>
+    <a class="vidro__marca" href="./"><img src="icone.png" alt="">Hub de Inventário</a>
+    <span class="vidro__vao"></span>
+    <nav aria-label="Seções">
+      <a href="#passo-1">Preparar</a>
+      <a href="#passo-3">Instalar</a>
+      <a href="#passo-4">Usar</a>
+      <a href="#passo-5">Aplicativo</a>
+      <a href="#problemas">Problemas</a>
+    </nav>
+    <a class="btn btn--loud btn--md is-fixo" data-web aria-disabled="true" href="#passo-3">Instalar o script</a>
+  </div>
+</div>
+
+<header class="capa capa--guia" id="topo">
+  <div class="miolo">
+    <div class="entrada">
+      <div class="entrada__texto">
+        <a class="volta" href="./"><i aria-hidden="true">←</i> Todas as formas de instalar</a>
+        <h1><span style="--i:0">Versão</span> <span style="--i:1">Web</span></h1>
+        <p class="lide">O Hub de Inventário dentro do envios, no navegador Edge. Para o computador que não aceita o instalador nem a Microsoft Store.</p>
+        <p class="ficha" data-meta>Seis passos. Os três primeiros você faz uma vez só.</p>
+      </div>
+      <div class="precisa revela">
+        <h2>Você vai precisar de</h2>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Navegador <b>Microsoft Edge</b>, o mesmo em que você já abre o envios.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Seu <b>login do envios</b>. O Hub não pede outra senha.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Uns <b>cinco minutos</b>, só na primeira vez.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="miolo guia">
+  <ol class="indice" data-indice aria-label="Passos">
+    <li><a href="#passo-1"><span>01</span>Instalar o Tampermonkey</a></li>
+    <li><a href="#passo-2"><span>02</span>Liberar scripts</a></li>
+    <li><a href="#passo-3"><span>03</span>Adicionar o script do Hub</a></li>
+    <li><a href="#passo-4"><span>04</span>Abrir o Hub no envios</a></li>
+    <li><a href="#passo-5"><span>05</span>Instalar como aplicativo</a></li>
+    <li><a href="#passo-6"><span>06</span>Atualizar</a></li>
+    <li><a href="#problemas"><span>?</span>Algo deu errado</a></li>
+  </ol>
+
+  <div>
+    <section class="etapa painel revela" id="passo-1">
+      <div class="etapa__cabeca"><span class="forma__n" aria-hidden="true">01</span><div><small>Uma vez só · 1 minuto</small><h2>Instale o Tampermonkey</h2></div></div>
+      <div class="etapa__corpo">
+        <div>
+          <ol class="lista">
+            <li>Abra a página do Tampermonkey nos Complementos do Edge.<br><a class="btn btn--quiet btn--md" href="https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd" target="_blank" rel="noopener">Abrir a página do Tampermonkey <i aria-hidden="true">↗</i></a></li>
+            <li>Clique em <b>Obter</b> e depois em <b>Adicionar extensão</b>.</li>
+            <li>Deixe o ícone à vista: clique na peça de quebra-cabeça, na barra do Edge, e no olho ao lado de Tampermonkey.</li>
+          </ol>
+          <p class="dica">O <b>Tampermonkey</b> é a extensão que deixa o Edge rodar o Hub dentro do envios.</p>
+        </div>
+        <figure class="cena">
+          <div class="tela">
+            <div class="tela__barra"><i></i><i></i><i></i><span class="tela__url">microsoftedge.microsoft.com/addons</span></div>
+            <div class="tela__corpo">
+              <div class="item"><span class="tm"></span><div><b>Tampermonkey</b><span>Extensão para scripts de usuário</span></div><span class="falso alvo">Obter</span></div>
+              <div class="esqueleto" style="width:82%;margin-top:18px"></div><div class="esqueleto" style="width:64%"></div><div class="esqueleto" style="width:73%"></div>
+            </div>
+          </div>
+          <figcaption>Ilustração da página de Complementos do Edge</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="etapa painel revela" id="passo-2">
+      <div class="etapa__cabeca"><span class="forma__n" aria-hidden="true">02</span><div><small>Uma vez só · 1 minuto</small><h2>Libere os scripts de usuário</h2></div></div>
+      <div class="etapa__corpo">
+        <div>
+          <ol class="lista">
+            <li>Copie este endereço e cole na barra de endereço do Edge. Ele não abre por clique.<br><span class="copia"><kbd>edge://extensions</kbd><button class="btn btn--quiet btn--md" type="button" data-copiar="edge://extensions">Copiar</button></span></li>
+            <li>Ligue a chave <b>Modo do desenvolvedor</b>, na lateral da página.</li>
+            <li>Se o envios já estava aberto, recarregue a aba (tecla <kbd>F5</kbd>).</li>
+          </ol>
+          <p class="dica"><b>Sem este passo o Hub não aparece.</b> É uma exigência do Edge para qualquer script. Em versões novas do Edge também serve ligar <b>Permitir scripts de usuário</b> nos detalhes do Tampermonkey.</p>
+        </div>
+        <figure class="cena">
+          <div class="tela">
+            <div class="tela__barra"><i></i><i></i><i></i><span class="tela__url">edge://extensions</span></div>
+            <div class="tela__corpo">
+              <div class="item is-destaque"><div><b>Modo do desenvolvedor</b><span>Precisa ficar ligado</span></div><span class="chave alvo"></span></div>
+              <div class="item"><span class="tm tm--p"></span><div><b>Tampermonkey</b><span>Ativada</span></div><span class="chave is-on"></span></div>
+            </div>
+          </div>
+          <figcaption>Ilustração da página de extensões do Edge</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="etapa painel revela" id="passo-3">
+      <div class="etapa__cabeca"><span class="forma__n" aria-hidden="true">03</span><div><small>Uma vez só · 30 segundos</small><h2>Adicione o script do Hub</h2></div></div>
+      <div class="etapa__corpo">
+        <div>
+          <ol class="lista">
+            <li>Clique no botão abaixo.<br><a class="btn btn--loud" data-web aria-disabled="true" href="#passo-3">Instalar a versão Web <i aria-hidden="true">↗</i></a></li>
+            <li>O Tampermonkey abre uma aba com o nome <b>Hub de Inventário (Web)</b>. Clique em <b>Instalar</b>.</li>
+            <li>A aba fecha sozinha. O script já está no seu Edge.</li>
+          </ol>
+          <p class="dica">Apareceu uma página cheia de código, sem botão Instalar? O Tampermonkey não está instalado ou está desligado. Volte ao passo 1.</p>
+        </div>
+        <figure class="cena">
+          <div class="tela">
+            <div class="tela__barra"><span class="tm tm--p"></span><span class="tela__url">Tampermonkey · instalação de script</span></div>
+            <div class="tela__corpo">
+              <div class="item"><img src="icone.png" alt="" width="36" height="36" style="border-radius:9px"><div><b>Hub de Inventário (Web)</b><span data-versao-web>Versão mais recente</span></div></div>
+              <div class="item"><span class="falso alvo">Instalar</span><span class="falso falso--calmo" style="margin-left:8px">Cancelar</span></div>
+              <div class="esqueleto" style="width:70%;margin-top:12px"></div><div class="esqueleto" style="width:52%"></div>
+            </div>
+          </div>
+          <figcaption>Ilustração da tela de instalação do Tampermonkey</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="etapa painel revela" id="passo-4">
+      <div class="etapa__cabeca"><span class="forma__n" aria-hidden="true">04</span><div><small>Todo dia</small><h2>Abra o Hub no envios</h2></div></div>
+      <div class="etapa__corpo">
+        <div>
+          <ol class="lista">
+            <li>Abra o Inventário do envios e entre com o seu login, se ele pedir.<br><a class="btn btn--quiet btn--md" href="https://envios.adminml.com/logistics/inventory" target="_blank" rel="noopener">Abrir o Inventário <i aria-hidden="true">↗</i></a></li>
+            <li>No canto de baixo, à direita, aparece o botão <b>Hub</b>. Clique nele.</li>
+            <li>O Hub abre por cima da página. Para voltar ao envios, clique no <b>X</b> no alto à direita.</li>
+          </ol>
+          <p class="dica">O botão aparece em qualquer página do envios. Na primeira vez, se o Backoffice pedir login, o Hub abre uma aba: entre lá e volte, que ele percebe sozinho.</p>
+        </div>
+        <figure class="cena">
+          <div class="tela">
+            <div class="tela__barra"><i></i><i></i><i></i><span class="tela__url">envios.adminml.com/logistics/inventory</span></div>
+            <div class="tela__corpo">
+              <div class="esqueleto" style="width:38%;height:14px"></div><div class="esqueleto" style="width:88%"></div><div class="esqueleto" style="width:76%"></div><div class="esqueleto" style="width:81%"></div><div class="esqueleto" style="width:45%"></div>
+              <span class="pilula alvo"><img src="icone.png" alt="">Hub</span>
+            </div>
+          </div>
+          <figcaption>Ilustração: o botão Hub no canto da página do envios</figcaption>
+        </figure>
+      </div>
+      <div class="etapa__corpo" style="grid-template-columns:1fr;padding-top:0">
+        <figure class="cena"><img src="web-hub.png" width="1600" height="960" loading="lazy" alt="Hub de Inventário aberto no navegador, com o Farol do Inventário, as ferramentas e o X para voltar ao envios"><figcaption>O Hub aberto no navegador (captura do ambiente de teste)</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="etapa painel revela" id="passo-5">
+      <div class="etapa__cabeca"><span class="forma__n" aria-hidden="true">05</span><div><small>Opcional · recomendado</small><h2>Instale como aplicativo</h2></div></div>
+      <div class="etapa__corpo">
+        <div>
+          <ol class="lista">
+            <li>Com o <b>Inventário do envios</b> aberto e o botão Hub já na tela, clique nos três pontos <kbd>···</kbd> no alto à direita do Edge.</li>
+            <li>Vá em <b>Aplicativos</b> (em alguns computadores aparece <b>Apps</b>) e clique em <b>Instalar este site como um aplicativo</b>.</li>
+            <li>O nome já vem <b>Hub de Inventário</b>. Clique em <b>Instalar</b>.</li>
+            <li>Marque <b>Fixar na barra de tarefas</b> e confirme.</li>
+          </ol>
+          <p class="dica">Daí em diante o Hub tem ícone próprio, abre numa janela só dele e já entra direto, sem passar pelo botão.</p>
+        </div>
+        <figure class="cena">
+          <div class="tela">
+            <div class="tela__barra"><i></i><i></i><i></i><span class="tela__url">envios.adminml.com/logistics/inventory</span><span class="tela__pontos alvo">···</span></div>
+            <div class="tela__corpo">
+              <div class="esqueleto" style="width:38%;height:14px"></div><div class="esqueleto" style="width:60%"></div><div class="esqueleto" style="width:48%"></div>
+              <div class="menu">
+                <div>Nova guia</div>
+                <div>Favoritos</div>
+                <div class="is-destaque">Aplicativos <span>›</span></div>
+                <div class="is-destaque">Instalar este site como um aplicativo</div>
+              </div>
+            </div>
+          </div>
+          <figcaption>Ilustração do menu do Edge</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="etapa painel revela" id="passo-6">
+      <div class="etapa__cabeca"><span class="forma__n" aria-hidden="true">06</span><div><small>Quando sair versão nova</small><h2>Atualize com dois cliques</h2></div></div>
+      <div class="etapa__corpo">
+        <div>
+          <ol class="lista">
+            <li>O Hub avisa: <b>“A versão … está pronta”</b>. Clique em <b>Atualizar agora</b>.</li>
+            <li>Abre uma aba do Tampermonkey. Clique em <b>Atualizar</b>.</li>
+            <li>Volte para a aba do Hub. Ele recarrega sozinho, já na versão nova, e mostra o que mudou.</li>
+          </ol>
+          <p class="dica">Se você não clicar, o Tampermonkey atualiza o script sozinho de tempos em tempos.</p>
+        </div>
+        <figure class="cena">
+          <div class="tela">
+            <div class="tela__barra"><i></i><i></i><i></i><span class="tela__url">Hub de Inventário</span></div>
+            <div class="tela__corpo">
+              <div class="esqueleto" style="width:42%;height:14px"></div><div class="esqueleto" style="width:84%"></div><div class="esqueleto" style="width:66%"></div>
+              <div class="aviso-tm" style="margin-top:34px"><span>A versão nova está pronta</span><span class="falso alvo">Atualizar agora</span></div>
+            </div>
+          </div>
+          <figcaption>Ilustração do aviso de versão nova</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="duvidas painel revela" id="problemas">
+      <h2>Algo deu errado?</h2>
+      <details class="duvida">
+        <summary>O botão Hub não aparece no envios<span class="mais" aria-hidden="true"></span></summary>
+        <div class="corpo"><p>Confira nesta ordem e recarregue a página (tecla <kbd>F5</kbd>) depois de cada item:</p><ul>
+          <li>Você está no <b>Edge</b> e num endereço que começa com <b>envios.adminml.com</b>.</li>
+          <li>O <b>Modo do desenvolvedor</b> está ligado (passo 2).</li>
+          <li>Clique no ícone do Tampermonkey: <b>Hub de Inventário (Web)</b> precisa aparecer na lista, com a chave ligada.</li>
+          <li>Se o script não está na lista, refaça o passo 3.</li>
+        </ul></div>
+      </details>
+      <details class="duvida">
+        <summary>O Tampermonkey mostra um aviso sobre o modo de desenvolvedor<span class="mais" aria-hidden="true"></span></summary>
+        <div class="corpo"><p>Falta o passo 2. Abra <kbd>edge://extensions</kbd>, ligue o <b>Modo do desenvolvedor</b> e recarregue o envios.</p></div>
+      </details>
+      <details class="duvida">
+        <summary>Cliquei em “Instalar a versão Web” e abriu uma página de código<span class="mais" aria-hidden="true"></span></summary>
+        <div class="corpo"><p>O Edge abriu o script como texto porque o Tampermonkey não está instalado ou está desligado. Faça os passos 1 e 2 e clique de novo.</p></div>
+      </details>
+      <details class="duvida">
+        <summary>O aplicativo abre o envios, e não o Hub<span class="mais" aria-hidden="true"></span></summary>
+        <div class="corpo"><p>Clique no botão <b>Hub</b>, no canto de baixo. Se acontecer sempre, o aplicativo foi instalado a partir de outra página: desinstale (três pontos da janela do aplicativo, <b>Configurações do aplicativo</b>, <b>Desinstalar</b>) e refaça o passo 5 com o <b>Inventário</b> aberto.</p></div>
+      </details>
+      <details class="duvida">
+        <summary>O Hub pediu login de novo<span class="mais" aria-hidden="true"></span></summary>
+        <div class="corpo"><p>A sessão do envios venceu, como acontece no próprio envios. Entre normalmente: o Hub volta sozinho quando o login terminar. Ele não lê nem guarda a sua senha.</p></div>
+      </details>
+      <details class="duvida">
+        <summary>Onde ficam as planilhas e os arquivos que o Hub gera?<span class="mais" aria-hidden="true"></span></summary>
+        <div class="corpo"><p>Na pasta <b>Downloads</b> do computador, como qualquer download do Edge.</p></div>
+      </details>
+      <details class="duvida">
+        <summary>Meu computador passou a aceitar o instalador ou a Store<span class="mais" aria-hidden="true"></span></summary>
+        <div class="corpo"><p>Prefira o aplicativo: ele se atualiza sem nenhum clique e não depende do Edge. <a href="./#formas">Veja as outras formas de instalar.</a></p></div>
+      </details>
+    </section>
+  </div>
+</main>
+
+<footer><div class="miolo"><b>Hub de Inventário</b><span>Ferramenta interna da operação de inventário.</span><nav aria-label="Rodapé"><a href="./">Todas as formas de instalar</a><a href="#topo">Voltar ao topo</a></nav><span data-gerado></span></div></footer>
+<script type="application/json" id="dados">{"gerado":"2026-11-15T19:00:45.434Z","loja":"https://apps.microsoft.com/detail/9PJJ5DVFFZ61","web":"https://gist.githubusercontent.com/devigorcarneiro/3c0995e65559e945095ee492fea3bea3/raw/HubInventario.user.js","versoes":[{"versao":"0.8.12","data":"2026-11-12T12:23:08Z","arquivos":[{"tipo":"exe","nome":"HubInventario-0.8.12-x64.exe","url":"https://github.com/devigorcarneiro/hub-inventario-downloads/releases/download/v0.8.12/HubInventario-0.8.12-x64.exe","bytes":121111479},{"tipo":"zip","nome":"HubInventario-0.8.12-x64.zip","url":"https://github.com/devigorcarneiro/hub-inventario-downloads/releases/download/v0.8.12/HubInventario-0.8.12-x64.zip","bytes":153663446}],"notas":["Faltantes de rota volta a ser uma ferramenta em teste: só aparece com \"Receber versões de teste\" ligado.","Faltantes em aduana: pacotes em **Parados**, **Parado no percurso** ou **Envio cancelado** continuam na lista, na cobrança e no ranking quando o status anterior foi o da aduana (faltante ou bipado a mais), lido no histórico do pacote.","Se o pacote passou por outro status depois da aduana antes de parar, ele sai como \"Status alterado\".","Ranking da Aduana mais fácil de ler: as colunas agora são **Faltaram → Resolvidos → Ainda faltam**, sem sinal de menos, com uma legenda explicando cada uma.","Abaixo de cada barra aparece quantos já foram resolvidos (ex.: \"3 de 9 resolvidos\").","Faltantes em aduana: as sacas também saem do **ranking de 30 dias** e dos dados já guardados no computador.","Faltantes em aduana: **sacas** bipadas a mais (código curto, como \"41\") não aparecem mais como pacote.","Faltantes em aduana: \"Outro dia\" agora lê **qualquer data**, pela mesma busca do Histórico de aduana do envios.","O ranking de 30 dias se completa sozinho com os dias em que o Hub não estava aberto."]},{"versao":"0.8.6","data":"2026-11-11T12:37:37Z","arquivos":[{"tipo":"exe","nome":"HubInventario-0.8.6-x64.exe","url":"https://github.com/devigorcarneiro/hub-inventario-downloads/releases/download/v0.8.6/HubInventario-0.8.6-x64.exe","bytes":121113025},{"tipo":"zip","nome":"HubInventario-0.8.6-x64.zip","url":"https://github.com/devigorcarneiro/hub-inventario-downloads/releases/download/v0.8.6/HubInventario-0.8.6-x64.zip","bytes":153661888}],"notas":["Faltantes em aduana: pacotes que já foram **entregues** (ou mudaram de status depois do dia seguinte à aduana) saem da cobrança e aparecem como \"Status alterado\" no ranking.","Os faltantes dos 30 dias do ranking voltam a ser conferidos (a cada 6 horas os mais antigos que 7 dias).","Bipagem Buffered: agora **toda bipagem fica gravada**, também no modo \"Antes do inventário\".","No modo \"Antes\", \"Exportar planilha\" salva todas as bipagens do dia (ID, horário, resultado, status, rota e inventário).","Os contadores e as últimas bipagens continuam lá mesmo se a página recarregar ou o Hub atualizar.","Nova ferramenta em teste: **Bipagem Buffered** (Operação). Bipe os pacotes e o Hub confere status, rota planejada e inventário de hoje, com sons e alarme. No modo \"Depois do inventário\", registra os Buffered sem rota e exporta a planilha.","A lista de rotas de 07/11 já vem carregada; use \"Importar rotas\" para trocar pelo CSV do dia.","Só aparece para quem tem \"Receber versões de teste\" ligado.","Versão no navegador (Edge): o Hub se atualiza sozinho e mostra o que mudou depois de atualizar. A tela de login fica centralizada ao lado do painel do Hub.","Faltantes de rota: só entram pacotes que viraram faltante até 23:59 de ontem. Um pacote que só ficou faltante hoje (por exemplo, numa rota que continuou no dia seguinte) entra na análise de amanhã.","Faltantes de rota: pacotes com avaria ou recusados pelo comprador na mesma rota ficam fora da planilha e da cobrança. Eles aparecem em \"Fora da análise\" com o motivo.","Nova ferramenta: **Faltantes de rota**. O Hub lê os faltantes da Gestão de pacotes e separa os que ficaram faltantes numa rota dos 2 dias anteriores. Ele confere na página da rota que o pacote saiu com o motorista e tira os que foram bipados depois (etiquetagem, inventário, aduana, carrinho) ou mudaram de status.","Gera as linhas da planilha de acompanhamento (STATUS = FALTANTE DE ROTA, OBS = registro mais recente de auditoria ou aduana) e uma mensagem de cobrança por transportadora, com motorista e placa.","Confere de novo a cada poucos minutos e avisa quando um pacote sai da cobrança. A aba \"Fora da análise\" mostra o motivo de cada pacote que saiu."]},{"versao":"0.7.9","data":"2026-11-05T17:14:49Z","arquivos":[{"tipo":"exe","nome":"HubInventario-0.7.9-x64.exe","url":"https://github.com/devigorcarneiro/hub-inventario-downloads/releases/download/v0.7.9/HubInventario-0.7.9-x64.exe","bytes":121096637},{"tipo":"zip","nome":"HubInventario-0.7.9-x64.zip","url":"https://github.com/devigorcarneiro/hub-inventario-downloads/releases/download/v0.7.9/HubInventario-0.7.9-x64.zip","bytes":153639058}],"notas":["Faltantes em aduana: o ranking agora conta só faltantes. Bipados a mais não entram.","Cada linha mostra os faltantes na aduana, quantos já foram encontrados (subtraídos) e quantos ainda estão faltando. A ordem segue os que ainda faltam.","Clique num nome para ver os pacotes: ID, data, rota, transportadora ou motorista, rep, produto e a situação (Faltando, Encontrado com onde e quando, ou Status alterado). Os nomes aparecem por inteiro, com todas as rotas.","O Hub agora também pode ser instalado pela Microsoft Store. Nessa versão, as atualizações maiores chegam pela própria loja.","Faltantes em aduana: uma mensagem de cobrança por transportadora, com faltantes e bipados a mais juntos (primeiro os faltantes). O título muda conforme o que tem na mensagem.","Modelo novo de cada pacote: ID, Data, Transportadora/Rota (transportadora primeiro), Motorista/Placa, Produto, Valor, Classificação e Auditoria de carrinhos.","A placa sai sem o que vem antes do traço (SDD-IVU1790 → IVU1790).","Faltantes em aduana: cada pacote aparece uma vez só, com a classificação da auditoria mais recente. Um pacote faltante numa aduana e bipado a mais em outra não aparece mais nas duas listas.","A classificação da seção Aduana da gestão de pacotes passa a mandar. Se ela diz Faltante, o pacote vai para os faltantes; se diz A mais, para os bipados a mais; se diz Correta (reauditado), sai da análise.","Faltantes em aduana: um pacote só entra na planilha, nos números do topo, na cobrança e no ranking se continuar como Faltante ou Para despachar e não tiver sido bipado no inventário (verificado ou deslocado) depois da aduana. Isso vale para faltantes e para bipados a mais.","Os pacotes que saíram (encontrados ou com status alterado) ficam numa lista à parte, \"Fora da análise\", com o motivo.","A conferência na gestão de pacotes roda a cada 4 minutos com a tela aberta e a cada 10 minutos em segundo plano. Quando um pacote sai da cobrança, aparece um aviso.","Atualizações: quando há uma versão nova pronta e ninguém mexe no Hub por 10 minutos, ele se atualiza sozinho e reabre em poucos segundos. Quem deixa o Hub aberto o dia todo também passa a receber as novidades. Durante um lote, ele espera o lote terminar.","A confirmação de que a versão nova abriu ficou mais robusta, para o Hub não voltar para a versão anterior sem motivo.","Farol do Inventário: na imagem para o WhatsApp, as zonas voltam a aparecer em cards, 4 por linha. Zonas sem volume ficam de fora do print.","Farol do Inventário: a imagem para o WhatsApp fica só com o dia. Aderência e indicadores ficam em cima e as zonas embaixo, em tabela larga e mais fácil de ler. O gráfico da semana saiu do print, mas continua no painel.","Farol do Inventário: a imagem para o WhatsApp agora é horizontal. Aderência, indicadores e gráfico da semana ficam à esquerda; as zonas viram uma tabela à direita, com as mesmas informações de antes.","Faltantes em aduana: aba Cobrança redesenhada. À esquerda ficam as mensagens (transportadora, tipo, pacotes e valor). À direita aparece a mensagem escolhida, como ela vai ficar no WhatsApp, com o negrito já aplicado.","Cada mensagem mostra se já foi copiada e a hora. \"Copiar todas\" marca todas.","Os pacotes que ficaram fora da mensagem (já encontrados ou corrigidos) aparecem num aviso discreto, sem poluir o texto.","Faltantes em aduana: as rotas voltam a sair exatamente como no envios. \">L12_AM1\" e \"L12_AM1\" são rotas diferentes, e o \">\" é mantido.","Faltantes em aduana: a coluna STATUS da planilha agora sai como \"FALTANTE ADUANA\" e \"BIPADO A MAIS\".","O ranking abre no dia escolhido (\"Ranking do dia\"). Use o botão \"30 dias\" para ver o ranking dos últimos 30 dias.","Faltantes em aduana: a tabela da Planilha não fica mais por cima dos campos de ajuste quando há muitas linhas.","As rotas saem sem o \">\" do início (ex.: K11_AM1), na tabela, na planilha e na cobrança.","Faltantes em aduana: corrigido o problema que impedia voltar da aba Cobrança para a Planilha.","Datas de inventário em formatos diferentes agora são lidas certo, e um pacote só aparece como \"Encontrado\" com uma data válida.","Faltantes em aduana: só entram na planilha, na cobrança e no ranking os pacotes que continuam como Faltante ou Para despachar. Os que foram corrigidos (Entregue, Em rota…) aparecem no fim da tabela como \"Corrigido\" e ficam de fora.","O status que vale é o do dia da aduana e do dia seguinte. Depois disso ele fica guardado, para o pacote não sair da análise só porque foi entregue dias depois.","Faltantes em aduana: nomes das transportadoras corrigidos na planilha, na cobrança e no ranking (KANGU, EXTRA, TORRES, RENNER…). Nomes com código de base, como BRNS ou BRDRS, ficam só com o código.","A lista de nomes pode ser editada na aba Planilha, em \"Nomes das transportadoras\".","Faltantes em aduana: cada pacote é conferido na gestão de pacotes (inventário e auditoria de carrinhos). A coluna Situação mostra se ele já foi encontrado, onde, quando e por quem.","Enquanto o Hub fica aberto, os faltantes dos últimos 7 dias são conferidos a cada 20 minutos. Quando um aparece no inventário, você recebe um aviso.","A cobrança segue o modelo novo: uma mensagem por transportadora e tipo (faltantes ou bipados a mais), com valor, produto, rota, motorista, placa e auditoria de carrinhos. Pacotes já encontrados ficam fora da mensagem.","Nova ferramenta: Faltantes em aduana. Lê a Aduana de hoje e o histórico, mostra só as rotas com pacotes faltantes ou bipados a mais e busca produto e valor no Backoffice.","Linhas prontas para colar na planilha de controle, texto de cobrança separado por transportadora e ranking dos últimos 30 dias.","Layout ajustado para notebooks de 13 a 15 polegadas: barra lateral mais estreita, títulos menores e campos que cabem na tela.","Versão portátil (.zip) disponível em Releases para computadores que não permitem instalar programas.","Correção do ícone na barra de tarefas do Windows (o programa passa a se chamar HubInventario.exe; o atalho é recriado sozinho).","O ícone do Hub agora aparece na barra de tarefas do Windows.","Primeira atualização do próprio aplicativo: o Hub baixa o instalador novo sozinho e pede só para reiniciar.","O Hub agora se atualiza sozinho: quando sair uma versão nova, ela é baixada em segundo plano e aparece o aviso \"Atualizar agora\".","Engrenagem → \"Procurar atualizações\" e opção de receber as versões de teste primeiro.","Se uma versão nova não abrir direito, o Hub volta sozinho para a anterior."]}]}</script>
+
+<script src="base.js"></script>
+<script>
+(() => {
+  const qa = s => [...document.querySelectorAll(s)];
+  /* Copiar o endereço que o Edge não deixa abrir por clique. */
+  qa('[data-copiar]').forEach(b => b.addEventListener('click', async () => {
+    const texto = b.dataset.copiar;
+    try { await navigator.clipboard.writeText(texto); }
+    catch (_) { const t = Object.assign(document.createElement('textarea'), { value: texto }); document.body.appendChild(t); t.select(); try { document.execCommand('copy'); } catch (_) {} t.remove(); }
+    b.classList.add('is-feito'); b.textContent = 'Copiado';
+    setTimeout(() => { b.classList.remove('is-feito'); b.textContent = 'Copiar'; }, 2200);
+  }));
+  /* Link do script e versão vêm da mesma lista da página principal. */
+  window.hubDados().then(d => {
+    if (d.web) qa('[data-web]').forEach(a => { a.href = d.web; a.target = '_blank'; a.rel = 'noopener'; a.removeAttribute('aria-disabled'); });
+    const v = d.versoes && d.versoes[0];
+    if (v) qa('[data-versao-web]').forEach(e => { e.textContent = `Versão ${v.versao}`; });
+    if (d.gerado) qa('[data-gerado]').forEach(e => { e.textContent = `Atualizada em ${new Date(d.gerado).toLocaleDateString('pt-BR', { day: 'numeric', month: 'short', year: 'numeric' }).replace(/ de /g, ' ')}`; });
+  }).catch(() => {});
+})();
+</script>
+</body>
+</html>

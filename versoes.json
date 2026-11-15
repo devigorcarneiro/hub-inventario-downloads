@@ -1,0 +1,134 @@
+{
+ "gerado": "2026-11-15T19:00:45.434Z",
+ "loja": "https://apps.microsoft.com/detail/9PJJ5DVFFZ61",
+ "web": "https://gist.githubusercontent.com/devigorcarneiro/3c0995e65559e945095ee492fea3bea3/raw/HubInventario.user.js",
+ "versoes": [
+  {
+   "versao": "0.8.12",
+   "data": "2026-11-12T12:23:08Z",
+   "arquivos": [
+    {
+     "tipo": "exe",
+     "nome": "HubInventario-0.8.12-x64.exe",
+     "url": "https://github.com/devigorcarneiro/hub-inventario-downloads/releases/download/v0.8.12/HubInventario-0.8.12-x64.exe",
+     "bytes": 121111479
+    },
+    {
+     "tipo": "zip",
+     "nome": "HubInventario-0.8.12-x64.zip",
+     "url": "https://github.com/devigorcarneiro/hub-inventario-downloads/releases/download/v0.8.12/HubInventario-0.8.12-x64.zip",
+     "bytes": 153663446
+    }
+   ],
+   "notas": [
+    "Faltantes de rota volta a ser uma ferramenta em teste: só aparece com \"Receber versões de teste\" ligado.",
+    "Faltantes em aduana: pacotes em **Parados**, **Parado no percurso** ou **Envio cancelado** continuam na lista, na cobrança e no ranking quando o status anterior foi o da aduana (faltante ou bipado a mais), lido no histórico do pacote.",
+    "Se o pacote passou por outro status depois da aduana antes de parar, ele sai como \"Status alterado\".",
+    "Ranking da Aduana mais fácil de ler: as colunas agora são **Faltaram → Resolvidos → Ainda faltam**, sem sinal de menos, com uma legenda explicando cada uma.",
+    "Abaixo de cada barra aparece quantos já foram resolvidos (ex.: \"3 de 9 resolvidos\").",
+    "Faltantes em aduana: as sacas também saem do **ranking de 30 dias** e dos dados já guardados no computador.",
+    "Faltantes em aduana: **sacas** bipadas a mais (código curto, como \"41\") não aparecem mais como pacote.",
+    "Faltantes em aduana: \"Outro dia\" agora lê **qualquer data**, pela mesma busca do Histórico de aduana do envios.",
+    "O ranking de 30 dias se completa sozinho com os dias em que o Hub não estava aberto."
+   ]
+  },
+  {
+   "versao": "0.8.6",
+   "data": "2026-11-11T12:37:37Z",
+   "arquivos": [
+    {
+     "tipo": "exe",
+     "nome": "HubInventario-0.8.6-x64.exe",
+     "url": "https://github.com/devigorcarneiro/hub-inventario-downloads/releases/download/v0.8.6/HubInventario-0.8.6-x64.exe",
+     "bytes": 121113025
+    },
+    {
+     "tipo": "zip",
+     "nome": "HubInventario-0.8.6-x64.zip",
+     "url": "https://github.com/devigorcarneiro/hub-inventario-downloads/releases/download/v0.8.6/HubInventario-0.8.6-x64.zip",
+     "bytes": 153661888
+    }
+   ],
+   "notas": [
+    "Faltantes em aduana: pacotes que já foram **entregues** (ou mudaram de status depois do dia seguinte à aduana) saem da cobrança e aparecem como \"Status alterado\" no ranking.",
+    "Os faltantes dos 30 dias do ranking voltam a ser conferidos (a cada 6 horas os mais antigos que 7 dias).",
+    "Bipagem Buffered: agora **toda bipagem fica gravada**, também no modo \"Antes do inventário\".",
+    "No modo \"Antes\", \"Exportar planilha\" salva todas as bipagens do dia (ID, horário, resultado, status, rota e inventário).",
+    "Os contadores e as últimas bipagens continuam lá mesmo se a página recarregar ou o Hub atualizar.",
+    "Nova ferramenta em teste: **Bipagem Buffered** (Operação). Bipe os pacotes e o Hub confere status, rota planejada e inventário de hoje, com sons e alarme. No modo \"Depois do inventário\", registra os Buffered sem rota e exporta a planilha.",
+    "A lista de rotas de 07/11 já vem carregada; use \"Importar rotas\" para trocar pelo CSV do dia.",
+    "Só aparece para quem tem \"Receber versões de teste\" ligado.",
+    "Versão no navegador (Edge): o Hub se atualiza sozinho e mostra o que mudou depois de atualizar. A tela de login fica centralizada ao lado do painel do Hub.",
+    "Faltantes de rota: só entram pacotes que viraram faltante até 23:59 de ontem. Um pacote que só ficou faltante hoje (por exemplo, numa rota que continuou no dia seguinte) entra na análise de amanhã.",
+    "Faltantes de rota: pacotes com avaria ou recusados pelo comprador na mesma rota ficam fora da planilha e da cobrança. Eles aparecem em \"Fora da análise\" com o motivo.",
+    "Nova ferramenta: **Faltantes de rota**. O Hub lê os faltantes da Gestão de pacotes e separa os que ficaram faltantes numa rota dos 2 dias anteriores. Ele confere na página da rota que o pacote saiu com o motorista e tira os que foram bipados depois (etiquetagem, inventário, aduana, carrinho) ou mudaram de status.",
+    "Gera as linhas da planilha de acompanhamento (STATUS = FALTANTE DE ROTA, OBS = registro mais recente de auditoria ou aduana) e uma mensagem de cobrança por transportadora, com motorista e placa.",
+    "Confere de novo a cada poucos minutos e avisa quando um pacote sai da cobrança. A aba \"Fora da análise\" mostra o motivo de cada pacote que saiu."
+   ]
+  },
+  {
+   "versao": "0.7.9",
+   "data": "2026-11-05T17:14:49Z",
+   "arquivos": [
+    {
+     "tipo": "exe",
+     "nome": "HubInventario-0.7.9-x64.exe",
+     "url": "https://github.com/devigorcarneiro/hub-inventario-downloads/releases/download/v0.7.9/HubInventario-0.7.9-x64.exe",
+     "bytes": 121096637
+    },
+    {
+     "tipo": "zip",
+     "nome": "HubInventario-0.7.9-x64.zip",
+     "url": "https://github.com/devigorcarneiro/hub-inventario-downloads/releases/download/v0.7.9/HubInventario-0.7.9-x64.zip",
+     "bytes": 153639058
+    }
+   ],
+   "notas": [
+    "Faltantes em aduana: o ranking agora conta só faltantes. Bipados a mais não entram.",
+    "Cada linha mostra os faltantes na aduana, quantos já foram encontrados (subtraídos) e quantos ainda estão faltando. A ordem segue os que ainda faltam.",
+    "Clique num nome para ver os pacotes: ID, data, rota, transportadora ou motorista, rep, produto e a situação (Faltando, Encontrado com onde e quando, ou Status alterado). Os nomes aparecem por inteiro, com todas as rotas.",
+    "O Hub agora também pode ser instalado pela Microsoft Store. Nessa versão, as atualizações maiores chegam pela própria loja.",
+    "Faltantes em aduana: uma mensagem de cobrança por transportadora, com faltantes e bipados a mais juntos (primeiro os faltantes). O título muda conforme o que tem na mensagem.",
+    "Modelo novo de cada pacote: ID, Data, Transportadora/Rota (transportadora primeiro), Motorista/Placa, Produto, Valor, Classificação e Auditoria de carrinhos.",
+    "A placa sai sem o que vem antes do traço (SDD-IVU1790 → IVU1790).",
+    "Faltantes em aduana: cada pacote aparece uma vez só, com a classificação da auditoria mais recente. Um pacote faltante numa aduana e bipado a mais em outra não aparece mais nas duas listas.",
+    "A classificação da seção Aduana da gestão de pacotes passa a mandar. Se ela diz Faltante, o pacote vai para os faltantes; se diz A mais, para os bipados a mais; se diz Correta (reauditado), sai da análise.",
+    "Faltantes em aduana: um pacote só entra na planilha, nos números do topo, na cobrança e no ranking se continuar como Faltante ou Para despachar e não tiver sido bipado no inventário (verificado ou deslocado) depois da aduana. Isso vale para faltantes e para bipados a mais.",
+    "Os pacotes que saíram (encontrados ou com status alterado) ficam numa lista à parte, \"Fora da análise\", com o motivo.",
+    "A conferência na gestão de pacotes roda a cada 4 minutos com a tela aberta e a cada 10 minutos em segundo plano. Quando um pacote sai da cobrança, aparece um aviso.",
+    "Atualizações: quando há uma versão nova pronta e ninguém mexe no Hub por 10 minutos, ele se atualiza sozinho e reabre em poucos segundos. Quem deixa o Hub aberto o dia todo também passa a receber as novidades. Durante um lote, ele espera o lote terminar.",
+    "A confirmação de que a versão nova abriu ficou mais robusta, para o Hub não voltar para a versão anterior sem motivo.",
+    "Farol do Inventário: na imagem para o WhatsApp, as zonas voltam a aparecer em cards, 4 por linha. Zonas sem volume ficam de fora do print.",
+    "Farol do Inventário: a imagem para o WhatsApp fica só com o dia. Aderência e indicadores ficam em cima e as zonas embaixo, em tabela larga e mais fácil de ler. O gráfico da semana saiu do print, mas continua no painel.",
+    "Farol do Inventário: a imagem para o WhatsApp agora é horizontal. Aderência, indicadores e gráfico da semana ficam à esquerda; as zonas viram uma tabela à direita, com as mesmas informações de antes.",
+    "Faltantes em aduana: aba Cobrança redesenhada. À esquerda ficam as mensagens (transportadora, tipo, pacotes e valor). À direita aparece a mensagem escolhida, como ela vai ficar no WhatsApp, com o negrito já aplicado.",
+    "Cada mensagem mostra se já foi copiada e a hora. \"Copiar todas\" marca todas.",
+    "Os pacotes que ficaram fora da mensagem (já encontrados ou corrigidos) aparecem num aviso discreto, sem poluir o texto.",
+    "Faltantes em aduana: as rotas voltam a sair exatamente como no envios. \">L12_AM1\" e \"L12_AM1\" são rotas diferentes, e o \">\" é mantido.",
+    "Faltantes em aduana: a coluna STATUS da planilha agora sai como \"FALTANTE ADUANA\" e \"BIPADO A MAIS\".",
+    "O ranking abre no dia escolhido (\"Ranking do dia\"). Use o botão \"30 dias\" para ver o ranking dos últimos 30 dias.",
+    "Faltantes em aduana: a tabela da Planilha não fica mais por cima dos campos de ajuste quando há muitas linhas.",
+    "As rotas saem sem o \">\" do início (ex.: K11_AM1), na tabela, na planilha e na cobrança.",
+    "Faltantes em aduana: corrigido o problema que impedia voltar da aba Cobrança para a Planilha.",
+    "Datas de inventário em formatos diferentes agora são lidas certo, e um pacote só aparece como \"Encontrado\" com uma data válida.",
+    "Faltantes em aduana: só entram na planilha, na cobrança e no ranking os pacotes que continuam como Faltante ou Para despachar. Os que foram corrigidos (Entregue, Em rota…) aparecem no fim da tabela como \"Corrigido\" e ficam de fora.",
+    "O status que vale é o do dia da aduana e do dia seguinte. Depois disso ele fica guardado, para o pacote não sair da análise só porque foi entregue dias depois.",
+    "Faltantes em aduana: nomes das transportadoras corrigidos na planilha, na cobrança e no ranking (KANGU, EXTRA, TORRES, RENNER…). Nomes com código de base, como BRNS ou BRDRS, ficam só com o código.",
+    "A lista de nomes pode ser editada na aba Planilha, em \"Nomes das transportadoras\".",
+    "Faltantes em aduana: cada pacote é conferido na gestão de pacotes (inventário e auditoria de carrinhos). A coluna Situação mostra se ele já foi encontrado, onde, quando e por quem.",
+    "Enquanto o Hub fica aberto, os faltantes dos últimos 7 dias são conferidos a cada 20 minutos. Quando um aparece no inventário, você recebe um aviso.",
+    "A cobrança segue o modelo novo: uma mensagem por transportadora e tipo (faltantes ou bipados a mais), com valor, produto, rota, motorista, placa e auditoria de carrinhos. Pacotes já encontrados ficam fora da mensagem.",
+    "Nova ferramenta: Faltantes em aduana. Lê a Aduana de hoje e o histórico, mostra só as rotas com pacotes faltantes ou bipados a mais e busca produto e valor no Backoffice.",
+    "Linhas prontas para colar na planilha de controle, texto de cobrança separado por transportadora e ranking dos últimos 30 dias.",
+    "Layout ajustado para notebooks de 13 a 15 polegadas: barra lateral mais estreita, títulos menores e campos que cabem na tela.",
+    "Versão portátil (.zip) disponível em Releases para computadores que não permitem instalar programas.",
+    "Correção do ícone na barra de tarefas do Windows (o programa passa a se chamar HubInventario.exe; o atalho é recriado sozinho).",
+    "O ícone do Hub agora aparece na barra de tarefas do Windows.",
+    "Primeira atualização do próprio aplicativo: o Hub baixa o instalador novo sozinho e pede só para reiniciar.",
+    "O Hub agora se atualiza sozinho: quando sair uma versão nova, ela é baixada em segundo plano e aparece o aviso \"Atualizar agora\".",
+    "Engrenagem → \"Procurar atualizações\" e opção de receber as versões de teste primeiro.",
+    "Se uma versão nova não abrir direito, o Hub volta sozinho para a anterior."
+   ]
+  }
+ ]
+}
