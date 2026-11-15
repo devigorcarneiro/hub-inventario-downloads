@@ -34,7 +34,7 @@ a { color: var(--accent-strong); text-underline-offset: 3px; }
 .faixa { position: fixed; z-index: 21; inset: 0 0 auto; height: 4px; background: var(--brand-yellow); }
 .barra { position: fixed; z-index: 20; inset: 12px 0 auto; pointer-events: none; }
 .vidro { pointer-events: auto; display: flex; align-items: center; gap: 4px; position: relative; max-width: 1152px; margin: 0 auto; padding: 6px; border-radius: 12px; background: transparent; box-shadow: none; transition: background-color var(--duration-base) var(--easing-standard), box-shadow var(--duration-base) var(--easing-standard); }
-.vidro.is-rolado { background: var(--glass-fill); -webkit-backdrop-filter: blur(var(--blur-glass)) saturate(140%); backdrop-filter: blur(var(--blur-glass)) saturate(140%); box-shadow: inset 0 0 0 1px var(--glass-stroke), var(--shadow-elevated); }
+.vidro.is-rolado { background: rgba(255, 255, 255, .94); -webkit-backdrop-filter: blur(24px) saturate(160%); backdrop-filter: blur(24px) saturate(160%); box-shadow: inset 0 0 0 1px var(--glass-stroke), var(--shadow-elevated); }
 .vidro__marca { display: flex; align-items: center; gap: 10px; padding: 0 12px 0 6px; color: var(--ink); font: 700 15px/20px var(--font-sans); letter-spacing: -.01em; text-decoration: none; }
 .vidro__marca img { width: 28px; height: 28px; border-radius: 7px; }
 .vidro__vao { flex: 1; }
@@ -93,14 +93,6 @@ h1 span { display: inline-block; }
   .js .palco { opacity: 0; transform: translateY(56px); animation: subir .9s var(--easing-standard) .25s forwards; }
   @keyframes subir { to { opacity: 1; transform: none; } }
 }
-
-/* Letreiro com as ferramentas, no azul-marinho da marca */
-.letreiro { background: var(--brand-navy); color: #fff; overflow: hidden; white-space: nowrap; padding: 14px 0; font: 600 14px/20px var(--font-sans); }
-.letreiro div { display: inline-flex; animation: correr 40s linear infinite; }
-.letreiro span { display: inline-flex; align-items: center; gap: 24px; padding-right: 24px; }
-.letreiro span::after { content: ""; width: 4px; height: 4px; border-radius: 50%; background: rgba(255, 255, 255, .45); }
-.letreiro:hover div { animation-play-state: paused; }
-@keyframes correr { to { transform: translateX(-50%); } }
 
 /* ---------- Seções ---------- */
 section { padding: 88px 0 0; }
@@ -182,18 +174,17 @@ footer span:last-child { font-family: var(--font-numeric); }
 
 /* Revelar ao rolar */
 @media (prefers-reduced-motion: no-preference) {
-  .js .revela { opacity: 0; transform: translateY(18px); transition: opacity var(--duration-data) var(--easing-standard), transform var(--duration-data) var(--easing-standard); transition-delay: calc(var(--i, 0) * 80ms); }
+  .js .revela { opacity: 0; transform: translateY(12px); transition: opacity var(--duration-slow) var(--easing-standard), transform var(--duration-slow) var(--easing-standard); transition-delay: calc(var(--i, 0) * 60ms); }
   .js .revela.is-visto { opacity: 1; transform: none; }
-  .js .passos::after { transform: scaleX(0); transition: transform 1.3s var(--easing-standard) .15s; }
+  /* Passos: a linha se desenha uma vez e os quatro entram juntos, em sequência curta */
+  .js .passos::after { transform: scaleX(0); transition: transform 700ms var(--easing-standard) 80ms; }
   .js .passos.is-visto::after { transform: scaleX(1); }
-  .js .passo::before { transform: scale(0); transition: transform var(--duration-slow) cubic-bezier(.3, 1.5, .5, 1); transition-delay: calc(var(--i, 0) * 260ms + 180ms); }
-  .js .passos.is-visto .passo::before { transform: scale(1); }
-  .js .passo { opacity: 0; transition: opacity var(--duration-data); transition-delay: calc(var(--i, 0) * 260ms + 240ms); }
-  .js .passos.is-visto .passo { opacity: 1; }
+  .js .passo { opacity: 0; transform: translateY(12px); transition: opacity var(--duration-slow) var(--easing-standard), transform var(--duration-slow) var(--easing-standard); transition-delay: calc(var(--i, 0) * 70ms); }
+  .js .passos.is-visto .passo { opacity: 1; transform: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .letreiro div, .btn:hover .seta { animation: none; }
+  .btn:hover .seta, .descer svg { animation: none; }
   .btn, .forma, .forma__n, .vidro, .vidro .btn { transition: none; }
 }
 @media (prefers-reduced-transparency: reduce) {
@@ -397,13 +388,13 @@ kbd { display: inline-block; padding: 1px 7px; border-radius: var(--radius-xs); 
 
 @media (prefers-reduced-motion: no-preference) {
   /* Painéis: o cartão sobe e as linhas entram em sequência */
-  .js .formas[data-visto], .js .versoes[data-visto] { opacity: 0; transform: translateY(18px); transition: opacity var(--duration-data) var(--easing-standard), transform var(--duration-data) var(--easing-standard); }
+  .js .formas[data-visto], .js .versoes[data-visto] { opacity: 0; transform: translateY(12px); transition: opacity var(--duration-slow) var(--easing-standard), transform var(--duration-slow) var(--easing-standard); }
   .js .formas.is-visto, .js .versoes.is-visto { opacity: 1; transform: none; }
-  .js .formas .forma, .js .versoes .versao { opacity: 0; transform: translateY(10px); transition: opacity var(--duration-data) var(--easing-standard) calc(var(--i, 0) * 90ms + 160ms), transform var(--duration-data) var(--easing-standard) calc(var(--i, 0) * 90ms + 160ms), background-color var(--duration-base) var(--easing-standard); }
+  .js .formas .forma, .js .versoes .versao { opacity: 0; transform: translateY(8px); transition: opacity var(--duration-slow) var(--easing-standard) calc(var(--i, 0) * 60ms + 60ms), transform var(--duration-slow) var(--easing-standard) calc(var(--i, 0) * 60ms + 60ms), background-color var(--duration-base) var(--easing-standard); }
   .js .is-visto .forma, .js .is-visto .versao { opacity: 1; transform: none; }
 }
 @media (prefers-reduced-motion: no-preference) and (max-width: 980px) {
-  .js .passo:not(:last-child)::after { transform: scaleY(0); transition: transform var(--duration-slow) var(--easing-standard); transition-delay: calc(var(--i, 0) * 260ms + 420ms); }
+  .js .passo:not(:last-child)::after { transform: scaleY(0); transition: transform var(--duration-slow) var(--easing-standard); transition-delay: calc(var(--i, 0) * 70ms + 120ms); }
   .js .passos.is-visto .passo:not(:last-child)::after { transform: scaleY(1); }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -411,4 +402,27 @@ kbd { display: inline-block; padding: 1px 7px; border-radius: var(--radius-xs); 
   .versao::details-content, .duvida::details-content { transition: none; }
   .pg-guia .vidro::after { animation: none; }
   .chave, .chave::after, .versao .mais::before, .versao .mais::after, .duvida .mais::before, .duvida .mais::after { transition: none; }
+}
+
+/* ================= Capa da página principal: ocupa a tela, com a janela do Hub grande e inteira ================= */
+.capa--inicio { display: flex; flex-direction: column; min-height: min(100svh, 1000px); }
+.capa--inicio > .miolo { flex: 1; display: flex; flex-direction: column; width: 100%; }
+.capa--inicio .entrada { flex: 1; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; gap: 48px; padding: 24px 0 28px; }
+.capa--inicio .entrada__texto { padding: 0; }
+/* Em telas largas a janela avança para a direita, além da coluna de texto */
+.capa--inicio .palco { align-self: center; margin-right: clamp(-200px, calc((1248px - 100vw) / 2), 0px); }
+.capa--inicio .moldura { padding: 8px; border-radius: var(--radius-xl); box-shadow: inset 0 0 0 1px var(--glass-stroke), 0 50px 90px -44px rgba(0, 0, 0, .55); transform-origin: 50% 50%; }
+.capa--inicio .moldura img { border-radius: 10px; }
+.descer { align-self: center; display: inline-flex; align-items: center; gap: 6px; height: 36px; margin-bottom: 18px; padding: 0 14px; border-radius: var(--radius-pill); color: var(--ink); font: 600 14px/20px var(--font-sans); text-decoration: none; transition: background-color var(--duration-fast) var(--easing-standard); }
+.descer:hover { background: var(--fill); }
+.descer svg { width: 16px; height: 16px; animation: descer 1.8s var(--easing-standard) infinite; }
+footer .miolo > b { margin-right: auto; }
+@media (max-width: 980px) {
+  .capa--inicio { min-height: 0; }
+  .capa--inicio .entrada { grid-template-columns: minmax(0, 1fr); gap: 32px; padding: 16px 0 40px; }
+  .capa--inicio .palco { margin-right: 0; }
+  .descer { display: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .js .descer { opacity: 0; animation: subir var(--duration-data) var(--easing-standard) .8s forwards; }
 }

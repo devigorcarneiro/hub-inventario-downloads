@@ -32,7 +32,7 @@
   const alvos = qa('.revela, [data-visto]');
   if (calmo || !temIO) alvos.forEach(e => e.classList.add('is-visto'));
   else {
-    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visto'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -10% 0px', threshold: .05 });
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visto'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -3% 0px', threshold: 0 });
     alvos.forEach(e => io.observe(e));
   }
 })();
