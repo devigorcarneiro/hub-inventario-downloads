@@ -1,8 +1,31 @@
 {
- "gerado": "2026-11-15T19:27:39.673Z",
+ "gerado": "2026-11-16T10:48:45.378Z",
  "loja": "https://apps.microsoft.com/detail/9PJJ5DVFFZ61",
  "web": "https://gist.githubusercontent.com/devigorcarneiro/3c0995e65559e945095ee492fea3bea3/raw/HubInventario.user.js",
  "versoes": [
+  {
+   "versao": "0.8.13",
+   "data": "2026-11-16T10:48:06Z",
+   "arquivos": [
+    {
+     "tipo": "exe",
+     "nome": "HubInventario-0.8.13-x64.exe",
+     "url": "https://github.com/devigorcarneiro/hub-inventario-downloads/releases/download/v0.8.13/HubInventario-0.8.13-x64.exe",
+     "bytes": 121113706
+    },
+    {
+     "tipo": "zip",
+     "nome": "HubInventario-0.8.13-x64.zip",
+     "url": "https://github.com/devigorcarneiro/hub-inventario-downloads/releases/download/v0.8.13/HubInventario-0.8.13-x64.zip",
+     "bytes": 153665975
+    }
+   ],
+   "notas": [
+    "Corrigidas as **travadas da tela**: a conferência automática da Aduana ficou muito mais leve e não disputa mais o envios com as suas consultas.",
+    "A Aduana confere no máximo 60 pacotes por vez e completa os 30 dias do ranking aos poucos, só com o Hub livre.",
+    "Novo em Configurações (engrenagem): **Copiar diagnóstico**, para enviar ao suporte se a tela travar."
+   ]
+  },
   {
    "versao": "0.8.12",
    "data": "2026-11-12T12:23:08Z",
